@@ -444,7 +444,7 @@ def parse_args(detector_classes, printer_classes):
 
     if os.path.isfile(args.config_file):
         try:
-            with open(args.config_file) as f:
+            with open(args.config_file, encoding='utf8') as f:
                 config = json.load(f)
                 for key, elem in config.items():
                     if key not in defaults_flag_in_config:

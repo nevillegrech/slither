@@ -195,7 +195,7 @@ class Slither(Context):
         filename = self._previous_results_filename
         try:
             if os.path.isfile(filename):
-                with open(filename) as f:
+                with open(filename, encoding='utf8') as f:
                     self._previous_results = json.load(f)
         except json.decoder.JSONDecodeError:
             logger.error(red('Impossible to decode {}. Consider removing the file'.format(filename)))
